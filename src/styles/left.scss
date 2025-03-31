@@ -1,0 +1,307 @@
+.left_part {
+  .profile_section {
+    text-align: center;
+
+    img {
+      width: 80%;
+      object-fit: cover;
+      border-radius: 10%;
+      height: 80%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Shadow around the profile picture
+      transition: width 0.3s ease, height 0.3s ease; // Add smooth transition for image resizing
+    }
+
+    .hero_name {
+      color: #d9e9ec; // Soft light cyan to contrast nicely with the dark background
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      transition: font-size 0.3s ease, margin 0.3s ease; // Add smooth transition for name font size and margin
+    }
+
+    .profession {
+      color: #e0e1e3; // Soft gray to contrast nicely with the dark background
+      font-weight: bold;
+      width: fit-content;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background-color: rgba(179, 178, 178, 0.1);
+      margin: 0 auto;
+      transition: font-size 0.3s ease, padding 0.3s ease, display 0.3s ease; // Smooth transition for profession size and padding
+    }
+  }
+
+  .my_contact_section {
+    text-align: center;
+
+    .card {
+      margin: 10px 0;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      transition: gap 0.3s ease, padding 0.3s ease; // Smooth transition for gap and padding
+
+      .card_icon {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(200, 195, 195, 0.12);
+        border: 1px solid rgba(179, 178, 178, 0.1);
+        border-radius: 20%;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        height: 36px;
+        width: 36px;
+
+        .email,
+        .mobile,
+        .dob,
+        .address {
+          font-size: 1.6rem;
+          color: rgb(230, 185, 102);
+        }
+      }
+
+      .card_content {
+        overflow: hidden;
+        flex: 4;
+        text-align: left;
+        color: #e0e1e3;
+
+        p {
+          &:first-child {
+            color: #878888;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          &:last-child {
+            font-size: 15px;
+            font-weight: bold;
+            color: #e0e1e3;
+          }
+        }
+      }
+    }
+  }
+
+  .social_icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    transition: gap 0.3s ease; // Smooth transition for gap
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: rgba(200, 195, 195, 0.12);
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      color: #e0e1e3;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba(200, 195, 195, 0.15);
+      }
+
+      .icon {
+        font-size: 1.5rem;
+        transition: font-size 0.3s ease; // Smooth transition for icon size
+      }
+    }
+
+    // Facebook icon style
+    .facebook {
+      background-color: #3b5998; // Facebook Blue
+      &:hover {
+        background-color: #4e69a2; // Slightly darker blue on hover
+      }
+    }
+
+    // Twitter icon style
+    .twitter {
+      background-color: #1da1f2; // Twitter Blue
+      &:hover {
+        background-color: #1a91da; // Slightly darker blue on hover
+      }
+    }
+
+    // Instagram icon style
+    .instagram {
+      background-color: #e1306c; // Instagram Pinkish Red
+      &:hover {
+        background-color: #d21d5f; // Slightly darker pink on hover
+      }
+    }
+
+    // GitHub icon style
+    .github {
+      background-color: #333; // GitHub Dark Gray
+      &:hover {
+        background-color: #444; // Slightly lighter gray on hover
+      }
+    }
+  }
+}
+
+// Responsive Styles
+
+@media screen and (max-width: 1200px) {
+  .left_part {
+    .profile_section {
+      img {
+        width: 70%;
+        height: 70%;
+      }
+    }
+
+    .my_contact_section .card {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+      overflow-x: hidden;
+    }
+
+    .social_icons {
+      gap: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .left_part {
+    .profile_section {
+      img {
+        width: 60%;
+        height: 60%;
+      }
+
+      .hero_name {
+        font-size: 1.4rem;
+      }
+
+      .profession {
+        font-size: 0.9rem;
+      }
+    }
+
+    .my_contact_section .card {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+      overflow-x: hidden;
+    }
+
+    .social_icons {
+      gap: 12px;
+      a {
+        width: 30px;
+        height: 30px;
+
+        .icon {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .left_part {
+    .profile_section {
+      img {
+        width: 60%;
+        height: 60%;
+      }
+
+      .hero_name {
+        font-size: 1.3rem;
+        display: none; // Hide hero name in mobile view
+      }
+
+      .profession {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+        display: none; // Hide profession in mobile view
+      }
+    }
+
+    .my_contact_section .card {
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .my_contact_section .card .card_content p:last-child {
+      display: none; // Hide last paragraph (content) in mobile view
+    }
+
+    .social_icons {
+      gap: 8px;
+      a {
+        width: 25px;
+        height: 25px;
+
+        .icon {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .left_part {
+    .profile_section {
+      img {
+        width: 40%;
+        height: 40%;
+      }
+
+      .hero_name {
+        font-size: 1.2rem;
+        display: none; // Hide hero name in mobile view
+      }
+
+      .profession {
+        font-size: 0.75rem;
+        display: none; // Hide profession in mobile view
+      }
+    }
+
+    .my_contact_section .card {
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px;
+    }
+
+    .my_contact_section .card .card_content p:last-child {
+      display: none; // Hide last paragraph (content) in mobile view
+    }
+
+    .social_icons {
+      gap: 6px;
+      a {
+        width: 20px;
+        height: 20px;
+
+        .icon {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
