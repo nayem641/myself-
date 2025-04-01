@@ -13,7 +13,7 @@ function LeftPart() {
   return (
     <div className="left_part">
       <div className="profile_section">
-        <img src="/avatar.jpeg" alt="avatar" />
+        <img src="/i.jpg" alt="avatar" />
         <div className="hero_name">Imtiyaz Mahmud</div>
         <div className="profession">Web developer</div>
       </div>

@@ -20,8 +20,8 @@ $font: "Raleway", sans-serif; // Using the Raleway font
     #121212,
     #1a1a1a
   ); // Subtle gradient background
-  padding:15px ;
-  min-height: 95vh;
+  padding: 15px;
+  min-height: 100vh;
   max-height: 100vh;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@ $font: "Raleway", sans-serif; // Using the Raleway font
     background: rgba(132, 132, 132, 0.1); // Semi-transparent white background
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
- 
+
     transition: all 0.3s ease-in-out; // Smooth transition for hover effects
   }
 
@@ -45,8 +45,6 @@ $font: "Raleway", sans-serif; // Using the Raleway font
     padding: 15px 8px;
     height: auto;
     width: 25%;
-
-    
   }
 
   .right_part {
@@ -54,16 +52,14 @@ $font: "Raleway", sans-serif; // Using the Raleway font
     height: auto;
     overflow-y: scroll;
     position: relative;
-  
+
     /* Hide scrollbar for all browsers */
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer & Edge */
-  
+
     /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
     &::-webkit-scrollbar {
       display: none;
     }
   }
-  
-
 }

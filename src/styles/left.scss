@@ -1,35 +1,65 @@
 .left_part {
   .profile_section {
     text-align: center;
+    position: relative; // Needed for the gradient effect to be visible behind the image
 
+    // Image style for the PNG background
     img {
-      width: 80%;
+      width: 60%;
+      height: 60%;
       object-fit: cover;
       border-radius: 10%;
-      height: 80%;
+      transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease; // Smooth transitions for resizing and shadow
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Shadow around the profile picture
-      transition: width 0.3s ease, height 0.3s ease; // Add smooth transition for image resizing
+      position: relative;
+      z-index: 1; // Ensure the image stays above the gradient
+
+      /* Cool gradient background with animation */
+      background: linear-gradient(
+        45deg,
+        #ba7591,
+        #4eabc3
+      ); /* Cool gradient colors */
+      background-size: 400% 400%; /* Makes the gradient animation visible */
+      animation: gradientAnimation 1s ease infinite; /* Gradient animation */
+
+      /* Optional: Adding a smooth border shadow effect */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+        inset 0 0 10px rgba(0, 0, 0, 0.3); /* Inner shadow for depth */
+    }
+
+    // Gradient animation keyframes
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .hero_name {
-      color: #d9e9ec; // Soft light cyan to contrast nicely with the dark background
+      color: #d9e9ec;
       font-size: 1.7rem;
       font-weight: 600;
       margin-top: 1.5rem;
       margin-bottom: 15px;
       letter-spacing: 1px;
-      transition: font-size 0.3s ease, margin 0.3s ease; // Add smooth transition for name font size and margin
+      transition: font-size 0.3s ease, margin 0.3s ease;
     }
 
     .profession {
-      color: #e0e1e3; // Soft gray to contrast nicely with the dark background
+      color: #e0e1e3;
       font-weight: bold;
       width: fit-content;
       padding: 10px 12px;
       border-radius: 12px;
       background-color: rgba(179, 178, 178, 0.1);
       margin: 0 auto;
-      transition: font-size 0.3s ease, padding 0.3s ease, display 0.3s ease; // Smooth transition for profession size and padding
+      transition: font-size 0.3s ease, padding 0.3s ease, display 0.3s ease;
     }
   }
 
@@ -43,7 +73,7 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      transition: gap 0.3s ease, padding 0.3s ease; // Smooth transition for gap and padding
+      transition: gap 0.3s ease, padding 0.3s ease;
 
       .card_icon {
         flex: 1;
@@ -98,7 +128,7 @@
     padding: 0 20px;
     flex-wrap: wrap;
     gap: 10px;
-    transition: gap 0.3s ease; // Smooth transition for gap
+    transition: gap 0.3s ease;
 
     a {
       display: flex;
@@ -119,57 +149,51 @@
 
       .icon {
         font-size: 1.5rem;
-        transition: font-size 0.3s ease; // Smooth transition for icon size
+        transition: font-size 0.3s ease;
       }
     }
 
-    // Facebook icon style
     .facebook {
-      background-color: #3b5998; // Facebook Blue
+      background-color: #3b5998;
       &:hover {
-        background-color: #4e69a2; // Slightly darker blue on hover
+        background-color: #4e69a2;
       }
     }
 
-    // Twitter icon style
     .twitter {
-      background-color: #1da1f2; // Twitter Blue
+      background-color: #1da1f2;
       &:hover {
-        background-color: #1a91da; // Slightly darker blue on hover
+        background-color: #1a91da;
       }
     }
 
-    // Instagram icon style
     .instagram {
-      background-color: #e1306c; // Instagram Pinkish Red
+      background-color: #e1306c;
       &:hover {
-        background-color: #d21d5f; // Slightly darker pink on hover
+        background-color: #d21d5f;
       }
     }
 
-    // GitHub icon style
     .github {
-      background-color: #333; // GitHub Dark Gray
+      background-color: #333;
       &:hover {
-        background-color: #444; // Slightly lighter gray on hover
+        background-color: #444;
       }
     }
   }
 }
 
-// Responsive Styles
-
+/* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .left_part {
     .profile_section {
       img {
-        width: 70%;
-        height: 70%;
+        width: 60%;
+        height: 60%;
       }
     }
 
     .my_contact_section .card {
-      flex-direction: column;
       gap: 15px;
       padding: 15px;
       overflow-x: hidden;
@@ -223,19 +247,19 @@
   .left_part {
     .profile_section {
       img {
-        width: 60%;
-        height: 60%;
+        width: 90%;
+        height: 90%;
       }
 
       .hero_name {
         font-size: 1.3rem;
-        display: none; // Hide hero name in mobile view
+        display: none;
       }
 
       .profession {
         font-size: 0.85rem;
         padding: 8px 10px;
-        display: none; // Hide profession in mobile view
+        display: none;
       }
     }
 
@@ -246,17 +270,17 @@
     }
 
     .my_contact_section .card .card_content p:last-child {
-      display: none; // Hide last paragraph (content) in mobile view
+      display: none;
     }
 
     .social_icons {
       gap: 8px;
       a {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
 
         .icon {
-          font-size: 1rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -267,18 +291,17 @@
   .left_part {
     .profile_section {
       img {
-        width: 40%;
-        height: 40%;
+        width: 100%;
       }
 
       .hero_name {
         font-size: 1.2rem;
-        display: none; // Hide hero name in mobile view
+        display: none;
       }
 
       .profession {
         font-size: 0.75rem;
-        display: none; // Hide profession in mobile view
+        display: none;
       }
     }
 
@@ -289,17 +312,17 @@
     }
 
     .my_contact_section .card .card_content p:last-child {
-      display: none; // Hide last paragraph (content) in mobile view
+      display: none;
     }
 
     .social_icons {
       gap: 6px;
       a {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
 
         .icon {
-          font-size: 0.9rem;
+          font-size: 1.2rem;
         }
       }
     }
