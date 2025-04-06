@@ -60,13 +60,13 @@ function LeftPart() {
          <a href="#" className="facebook">
           <FaFacebook className="icon"/>
         </a>
-        <a href="#" className="twitter">
+        <a href="https://x.com/ImtiyazalM71494" className="twitter">
           <FaTwitter className="icon"/>
         </a>
         <a href="#" className="instagram">
           <FaSquareInstagram className="icon"/>
         </a>
-        <a href="#" className="github">
+        <a href="https://github.com/Imtiyaz-al-Mohammad" className="github">
           <FaGithub className="icon"/>
         </a>
 
